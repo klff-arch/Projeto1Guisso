@@ -12,9 +12,19 @@ namespace Projeto1
 {
     public partial class ListaUsuarios : Form
     {
-        public ListaUsuarios()
+        private static ListaUsuarios _instance;
+        private ListaUsuarios()
         {
             InitializeComponent();
+        }
+
+        public static ListaUsuarios GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new ListaUsuarios();
+            }
+            return _instance;
         }
     }
 }

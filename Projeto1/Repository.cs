@@ -5,10 +5,10 @@ namespace Projeto1
 {
     public class Repository : DbContext
     {
-        private static readonly String _connectionParams = @"server=127.0.0.1;port=3307;uid=root;pwd=;database:projeto1";
+        private static readonly String _connectionParams = @"server=127.0.0.1;port=3307;uid=root;pwd=;database=projeto1";
 
-        public DbSet<Usuario> Usuarios { get; set; };
-        public DbSet<Credencial> Credenciais { get; set; };
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Credencial> Credenciais { get; set; }
 
         public Repository() => this.Database.EnsureCreated();
 

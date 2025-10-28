@@ -26,5 +26,35 @@ namespace Projeto1
                 throw;
             }
         }
+
+        public static List<Usuario> FindAll()
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Usuarios.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static Usuario FindById(UInt64 id)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Usuarios.Find(id);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

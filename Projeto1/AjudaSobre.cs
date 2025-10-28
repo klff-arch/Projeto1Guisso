@@ -12,9 +12,19 @@ namespace Projeto1
 {
     public partial class AjudaSobre : Form
     {
-        public AjudaSobre()
+        private static AjudaSobre _instance;
+        private AjudaSobre()
         {
             InitializeComponent();
+        }
+
+        public static AjudaSobre GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new AjudaSobre();
+            }
+            return _instance;
         }
     }
 }

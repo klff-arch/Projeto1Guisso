@@ -41,12 +41,14 @@
             lblUsuario = new Label();
             lblNome = new Label();
             txtNome = new TextBox();
+            lblAviso = new Label();
             pnlPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // pnlPrincipal
             // 
             pnlPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlPrincipal.Controls.Add(lblAviso);
             pnlPrincipal.Controls.Add(mskTelefone);
             pnlPrincipal.Controls.Add(lblTelefone);
             pnlPrincipal.Controls.Add(btnSalvar);
@@ -70,7 +72,7 @@
             mskTelefone.Location = new Point(152, 96);
             mskTelefone.Mask = "00 00000-0000";
             mskTelefone.Name = "mskTelefone";
-            mskTelefone.Size = new Size(214, 33);
+            mskTelefone.Size = new Size(263, 33);
             mskTelefone.TabIndex = 23;
             // 
             // lblTelefone
@@ -93,12 +95,13 @@
             btnSalvar.TabIndex = 21;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // chkGerente
             // 
             chkGerente.AutoSize = true;
             chkGerente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkGerente.Location = new Point(152, 238);
+            chkGerente.Location = new Point(52, 238);
             chkGerente.Name = "chkGerente";
             chkGerente.Size = new Size(98, 29);
             chkGerente.TabIndex = 20;
@@ -111,7 +114,7 @@
             txtRepetirSenha.Location = new Point(152, 188);
             txtRepetirSenha.Name = "txtRepetirSenha";
             txtRepetirSenha.PasswordChar = '*';
-            txtRepetirSenha.Size = new Size(214, 33);
+            txtRepetirSenha.Size = new Size(263, 33);
             txtRepetirSenha.TabIndex = 19;
             // 
             // txtSenha
@@ -120,7 +123,7 @@
             txtSenha.Location = new Point(152, 140);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(214, 33);
+            txtSenha.Size = new Size(263, 33);
             txtSenha.TabIndex = 18;
             // 
             // txtUsuario
@@ -179,6 +182,18 @@
             txtNome.Size = new Size(321, 33);
             txtNome.TabIndex = 12;
             // 
+            // lblAviso
+            // 
+            lblAviso.AutoSize = true;
+            lblAviso.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAviso.ForeColor = Color.Maroon;
+            lblAviso.Location = new Point(171, 224);
+            lblAviso.Name = "lblAviso";
+            lblAviso.Size = new Size(209, 21);
+            lblAviso.TabIndex = 24;
+            lblAviso.Text = "Verificação de senha inválida";
+            lblAviso.Visible = false;
+            // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -207,5 +222,6 @@
         private Label lblUsuario;
         private Label lblNome;
         private TextBox txtNome;
+        private Label lblAviso;
     }
 }

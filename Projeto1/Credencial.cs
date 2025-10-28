@@ -50,13 +50,13 @@ namespace Projeto1
                 }
                 if (value.Length < 8)
                 {
-                    throw new ArgumentException("A senha não pode ter menos de 8 caracteres")
+                    throw new ArgumentException("A senha não pode ter menos de 8 caracteres");
                 }
                 _senha = ComputeSHA256(value, SALT);
             }
         }
         [Required]
-        public Boolean? _gerente {  get; set; }
+        public Boolean Gerente { get; set; } = false;
 
         [Required]
         private Usuario? _usuario;

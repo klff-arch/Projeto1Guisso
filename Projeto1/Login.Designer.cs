@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pnlPrincipal = new Panel();
-            lblAviso = new Label();
+            lblInvalida = new Label();
             txtSenha = new TextBox();
             lblSenha = new Label();
             lblUsuario = new Label();
@@ -40,7 +40,7 @@
             // pnlPrincipal
             // 
             pnlPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlPrincipal.Controls.Add(lblAviso);
+            pnlPrincipal.Controls.Add(lblInvalida);
             pnlPrincipal.Controls.Add(txtSenha);
             pnlPrincipal.Controls.Add(lblSenha);
             pnlPrincipal.Controls.Add(lblUsuario);
@@ -50,17 +50,18 @@
             pnlPrincipal.Size = new Size(421, 153);
             pnlPrincipal.TabIndex = 0;
             // 
-            // lblAviso
+            // lblInvalida
             // 
-            lblAviso.AutoSize = true;
-            lblAviso.BackColor = Color.Yellow;
-            lblAviso.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAviso.ForeColor = Color.FromArgb(192, 0, 0);
-            lblAviso.Location = new Point(122, 112);
-            lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(178, 25);
-            lblAviso.TabIndex = 4;
-            lblAviso.Text = "Credencial Inválida!";
+            lblInvalida.AutoSize = true;
+            lblInvalida.BackColor = Color.Yellow;
+            lblInvalida.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInvalida.ForeColor = Color.FromArgb(192, 0, 0);
+            lblInvalida.Location = new Point(122, 112);
+            lblInvalida.Name = "lblInvalida";
+            lblInvalida.Size = new Size(178, 25);
+            lblInvalida.TabIndex = 4;
+            lblInvalida.Text = "Credencial Inválida!";
+            lblInvalida.Visible = false;
             // 
             // txtSenha
             // 
@@ -116,7 +117,7 @@
         private Panel pnlPrincipal;
         private Label lblUsuario;
         private TextBox txtUsuario;
-        private Label lblAviso;
+        private Label lblInvalida;
         private TextBox txtSenha;
         private Label lblSenha;
     }

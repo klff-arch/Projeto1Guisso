@@ -7,6 +7,7 @@ namespace Projeto1
     public class Usuario
     {
         public UInt64 Id { get; set; }
+
         [Required]
         [MaxLength(60)]
         private String? _nome;
@@ -29,8 +30,9 @@ namespace Projeto1
                 value = _nome;
             }
         }
+
         [Required]
-        [MaxLength(11)]
+        [MaxLength(13)]
         private String? _telefone;
         public String? Telefone
         {
@@ -44,13 +46,14 @@ namespace Projeto1
                 {
                     throw new ArgumentNullException("O telefone não pode ser nulo ou vazio");
                 }
-                if (value.Length > 11 || value.Length < 11)
+                if (value.Length > 13 || value.Length < 13)
                 {
-                    throw new ArgumentException("O telefone deve ter 11 caracteres");
+                    throw new ArgumentException("O telefone deve ter 13 caracteres");
                 }
                 _telefone = value;
             }
         }
+
         [Required]
         [MaxLength(100)]
         private String? _email;
@@ -73,6 +76,30 @@ namespace Projeto1
                 _email = value;
             }
         }
+
+        [Required]
+        [MaxLength(30)]
+        private String? _apelido;
+        public String? Apelido
+        {
+            get
+            {
+                return _apelido;
+            }
+            set
+            {
+                if(value is null )
+                {
+                    throw new ArgumentNullException("O apelido não pode ser nulo");
+                }
+                if(value.Length > 30)
+                {
+                    throw new ArgumentException("O apelido não pode ter mais de 30 caracteres");
+                }
+                _apelido = value;
+            }
+        }
+
         [Required]
         private Credencial? _credencial;
         public Credencial? Credencial
@@ -90,5 +117,8 @@ namespace Projeto1
                 _credencial = value;
             }
         }
+
+        [Required]
+        public UInt64 CredencialId { get; set; }
     }
 }

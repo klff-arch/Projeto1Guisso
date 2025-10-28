@@ -1,3 +1,6 @@
+using Mysqlx.Crud;
+using System;
+using System.Text;  
 namespace Projeto1
 {
     internal static class Program
@@ -11,7 +14,8 @@ namespace Projeto1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(Login.GetInstance());
+            Repository repository = new Repository();
         }
     }
 }

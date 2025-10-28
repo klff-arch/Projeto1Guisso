@@ -30,13 +30,13 @@
         {
             mnuPrincipal = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
-            mnuCadastro = new ToolStripMenuItem();
-            mnuRelatorio = new ToolStripMenuItem();
-            mnuAjuda = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
+            mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
+            mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuarios = new ToolStripMenuItem();
-            mnuSobre = new ToolStripMenuItem();
+            mnuAjuda = new ToolStripMenuItem();
+            mnuAjudaSobre = new ToolStripMenuItem();
             mnuPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,12 +56,26 @@
             mnuArquivo.Size = new Size(61, 20);
             mnuArquivo.Text = "Arquivo";
             // 
+            // mnuArquivoSair
+            // 
+            mnuArquivoSair.Name = "mnuArquivoSair";
+            mnuArquivoSair.Size = new Size(93, 22);
+            mnuArquivoSair.Text = "Sair";
+            mnuArquivoSair.Click += mnuArquivoSair_Click;
+            // 
             // mnuCadastro
             // 
             mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario });
             mnuCadastro.Name = "mnuCadastro";
             mnuCadastro.Size = new Size(66, 20);
             mnuCadastro.Text = "Cadastro";
+            // 
+            // mnuCadastroUsuario
+            // 
+            mnuCadastroUsuario.Name = "mnuCadastroUsuario";
+            mnuCadastroUsuario.Size = new Size(114, 22);
+            mnuCadastroUsuario.Text = "Usuário";
+            mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuRelatorio
             // 
@@ -70,36 +84,26 @@
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatório";
             // 
-            // mnuAjuda
-            // 
-            mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuSobre });
-            mnuAjuda.Name = "mnuAjuda";
-            mnuAjuda.Size = new Size(50, 20);
-            mnuAjuda.Text = "Ajuda";
-            // 
-            // mnuArquivoSair
-            // 
-            mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(93, 22);
-            mnuArquivoSair.Text = "Sair";
-            // 
-            // mnuCadastroUsuario
-            // 
-            mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
-            mnuCadastroUsuario.Text = "Usuário";
-            // 
             // mnuRelatorioUsuarios
             // 
             mnuRelatorioUsuarios.Name = "mnuRelatorioUsuarios";
             mnuRelatorioUsuarios.Size = new Size(180, 22);
             mnuRelatorioUsuarios.Text = "Usuários";
+            mnuRelatorioUsuarios.Click += mnuRelatorioUsuarios_Click;
             // 
-            // mnuSobre
+            // mnuAjuda
             // 
-            mnuSobre.Name = "mnuSobre";
-            mnuSobre.Size = new Size(180, 22);
-            mnuSobre.Text = "Sobre";
+            mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
+            mnuAjuda.Name = "mnuAjuda";
+            mnuAjuda.Size = new Size(50, 20);
+            mnuAjuda.Text = "Ajuda";
+            // 
+            // mnuAjudaSobre
+            // 
+            mnuAjudaSobre.Name = "mnuAjudaSobre";
+            mnuAjudaSobre.Size = new Size(180, 22);
+            mnuAjudaSobre.Text = "Sobre";
+            mnuAjudaSobre.Click += mnuSobre_Click;
             // 
             // Sistema
             // 
@@ -107,9 +111,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(mnuPrincipal);
+            IsMdiContainer = true;
             MainMenuStrip = mnuPrincipal;
             Name = "Sistema";
             Text = "Sistema";
+            FormClosing += Sistema_FormClosing;
             mnuPrincipal.ResumeLayout(false);
             mnuPrincipal.PerformLayout();
             ResumeLayout(false);
@@ -126,6 +132,6 @@
         private ToolStripMenuItem mnuRelatorio;
         private ToolStripMenuItem mnuRelatorioUsuarios;
         private ToolStripMenuItem mnuAjuda;
-        private ToolStripMenuItem mnuSobre;
+        private ToolStripMenuItem mnuAjudaSobre;
     }
 }
