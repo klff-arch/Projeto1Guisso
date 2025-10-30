@@ -19,6 +19,7 @@ namespace Projeto1
                     {
                         dbContext.Entry(credencial).State = EntityState.Modified;
                     }
+                    dbContext.SaveChanges();
                 }
             }
             catch (Exception)
@@ -33,6 +34,20 @@ namespace Projeto1
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Credenciais.Find(id);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static List<Credencial> FindAllWithCredencial()
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Credenciais.Include("Usuario").ToList();
                 }
             }
             catch (Exception)

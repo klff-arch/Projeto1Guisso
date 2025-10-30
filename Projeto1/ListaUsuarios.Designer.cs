@@ -41,7 +41,7 @@
             pnlPrincipal.Controls.Add(lblListaUsuarios);
             pnlPrincipal.Location = new Point(12, 12);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(182, 197);
+            pnlPrincipal.Size = new Size(182, 193);
             pnlPrincipal.TabIndex = 0;
             // 
             // lstUsuarios
@@ -49,7 +49,7 @@
             lstUsuarios.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstUsuarios.FormattingEnabled = true;
             lstUsuarios.ItemHeight = 25;
-            lstUsuarios.Location = new Point(29, 52);
+            lstUsuarios.Location = new Point(26, 60);
             lstUsuarios.Name = "lstUsuarios";
             lstUsuarios.Size = new Size(120, 79);
             lstUsuarios.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(206, 221);
+            ClientSize = new Size(206, 217);
             Controls.Add(pnlPrincipal);
             Name = "ListaUsuarios";
             Text = "Form2";

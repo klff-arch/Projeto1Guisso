@@ -19,19 +19,6 @@ namespace Projeto1
         {
             InitializeComponent();
 
-            Credencial credencial = new Credencial()
-            {
-                Id = 1001,
-                NomeUsuario = "ana.zaira",
-                Senha = "123456785",
-                Gerente = true
-            };
-            _usuario = new Usuario()
-            {
-                Id = 1,
-                Nome = "Ana Zaira da Silva",
-                Credencial = credencial
-            };
         }
 
         public static Login GetInstance()
@@ -55,24 +42,26 @@ namespace Projeto1
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtUsuario.Focus();
-
-                if (txtUsuario.Text == _usuario.Credencial.NomeUsuario
-                    && txtSenha.Text == _usuario.Credencial.Senha)
+                foreach (Credencial credencial in CredencialRepository.FindAllWithCredencial())
                 {
-                    txtUsuario.Clear();
-                    txtSenha.Clear();
+                    if (txtUsuario.Text == credencial.NomeUsuario
+                        && credencial.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT))
+                    {
+                        txtUsuario.Clear();
+                        txtSenha.Clear();
 
-                    
-                    Hide();
+                        Hide();
 
-                    // new Sistema(_usuario).Show(); errado
-                    Sistema.GetInstance(_usuario).Show();
-                }
-                else
-                {
-                    lblInvalida.Show();
-                    txtUsuario.SelectAll();
+                        // new Sistema(_usuario).Show(); errado
+                        Sistema.GetInstance(credencial.Usuario).Show();
+                    }
+                    else
+                    {
+                        lblInvalida.Show();
+                        txtSenha.Focus();
+                        txtUsuario.SelectAll();
+                        txtSenha.Clear();
+                    }
                 }
             }
         }

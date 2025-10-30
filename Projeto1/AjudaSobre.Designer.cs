@@ -54,7 +54,7 @@
             // 
             lblDesenvolvedores.AutoSize = true;
             lblDesenvolvedores.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDesenvolvedores.Location = new Point(3, 42);
+            lblDesenvolvedores.Location = new Point(3, 56);
             lblDesenvolvedores.Name = "lblDesenvolvedores";
             lblDesenvolvedores.Size = new Size(163, 25);
             lblDesenvolvedores.TabIndex = 9;
@@ -64,7 +64,7 @@
             // 
             lblDesenvolvedor2.AutoSize = true;
             lblDesenvolvedor2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDesenvolvedor2.Location = new Point(3, 120);
+            lblDesenvolvedor2.Location = new Point(3, 106);
             lblDesenvolvedor2.Name = "lblDesenvolvedor2";
             lblDesenvolvedor2.Size = new Size(211, 25);
             lblDesenvolvedor2.TabIndex = 8;

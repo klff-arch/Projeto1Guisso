@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Cryptography;
 using System.Text;
 
-
 namespace Projeto1
 {
     public class Credencial
@@ -72,6 +71,7 @@ namespace Projeto1
                 {
                     throw new ArgumentNullException("O usuário não pode ser nulo");
                 }
+                _usuario = value;
             }
         }
         #region Hashing

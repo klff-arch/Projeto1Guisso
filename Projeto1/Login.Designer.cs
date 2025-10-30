@@ -70,6 +70,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(274, 33);
             txtSenha.TabIndex = 3;
+            txtSenha.KeyUp += txtSenha_KeyUp;
             // 
             // lblSenha
             // 
@@ -98,6 +99,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(274, 33);
             txtUsuario.TabIndex = 0;
+            txtUsuario.KeyUp += txtUsuario_KeyUp;
             // 
             // Login
             // 

@@ -37,6 +37,7 @@
             mnuRelatorioUsuarios = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
+            staAcesso = new StatusStrip();
             mnuPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             // mnuRelatorioUsuarios
             // 
             mnuRelatorioUsuarios.Name = "mnuRelatorioUsuarios";
-            mnuRelatorioUsuarios.Size = new Size(180, 22);
+            mnuRelatorioUsuarios.Size = new Size(119, 22);
             mnuRelatorioUsuarios.Text = "Usuários";
             mnuRelatorioUsuarios.Click += mnuRelatorioUsuarios_Click;
             // 
@@ -101,15 +102,24 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(180, 22);
+            mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuSobre_Click;
+            // 
+            // staAcesso
+            // 
+            staAcesso.Location = new Point(0, 428);
+            staAcesso.Name = "staAcesso";
+            staAcesso.Size = new Size(800, 22);
+            staAcesso.TabIndex = 2;
+            staAcesso.Text = "statusStrip1";
             // 
             // Sistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(staAcesso);
             Controls.Add(mnuPrincipal);
             IsMdiContainer = true;
             MainMenuStrip = mnuPrincipal;
@@ -133,5 +143,6 @@
         private ToolStripMenuItem mnuRelatorioUsuarios;
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
+        private StatusStrip staAcesso;
     }
 }

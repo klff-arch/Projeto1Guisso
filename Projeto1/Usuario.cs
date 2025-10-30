@@ -27,7 +27,7 @@ namespace Projeto1
                 {
                     throw new ArgumentException("O nome não pode ter mais de 60 caracteres");
                 }
-                value = _nome;
+                _nome = value;
             }
         }
 
@@ -117,7 +117,7 @@ namespace Projeto1
                 _credencial = value;
             }
         }
-
+        [ForeignKey("crendecial_id")]
         [Required]
         public UInt64 CredencialId { get; set; }
     }

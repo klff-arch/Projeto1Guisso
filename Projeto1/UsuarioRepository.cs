@@ -19,6 +19,7 @@ namespace Projeto1
                     {
                         dbContext.Entry(usuario).State = EntityState.Modified;
                     }
+                    dbContext.SaveChanges();
                 }
             }
             catch(Exception)
@@ -27,13 +28,13 @@ namespace Projeto1
             }
         }
 
-        public static List<Usuario> FindAll()
+        public static List<Usuario> FindAllWithCredencial()
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Usuarios.ToList();
+                    return dbContext.Usuarios.Include("Credencial").ToList();
                 }
             }
             catch (Exception)
@@ -42,7 +43,7 @@ namespace Projeto1
             }
         }
 
-        public static Usuario FindById(UInt64 id)
+        public static Usuario? FindById(UInt64 id)
         {
             try
             {
